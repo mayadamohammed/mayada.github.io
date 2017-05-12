@@ -33,7 +33,7 @@
 <div class="thumbnails">
 	<div>
 		<ul>
-			<li class="i" id="ok">
+			<li class="i">
 				<img src="pages/1-thumb.jpg" width="76" height="100" class="page-1">
 				<span>1</span>
 			</li>
@@ -72,9 +72,9 @@
 </div>
 
 <script type="text/javascript">
+
 function loadApp() {
 
-	var i = 0;
  	$('#canvas').fadeIn(1000);
 
  	var flipbook = $('.magazine');
@@ -126,10 +126,6 @@ function loadApp() {
 
 			when: {
 				turning: function(event, page, view) {
-					if (i == 0) {
-						new Audio('audio/1.mp3').play();
-						i++;
-					}
 					
 					var book = $(this),
 					currentPage = book.turn('page'),
@@ -470,9 +466,9 @@ yepnope({
 </script>
 
 <script>
-	$('#ok').click(function(event) {
-		/* Act on the event */
+	$().click(function(event) {
 		new Audio('audio/1.mp3').play();
+		/* Act on the event */
 	});
 </script>
 </body>
