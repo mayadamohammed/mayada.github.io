@@ -514,13 +514,14 @@ function detectmob() {
  || navigator.userAgent.match(/BlackBerry/i)
  || navigator.userAgent.match(/Windows Phone/i)
  ){
+	 
     return true;
   }
  else {
     return false;
   }
 }
-if(!detectmob){
+if(!detectmob()){
 $('#audioDiv').addClass('hidden');
 }
 </script>
