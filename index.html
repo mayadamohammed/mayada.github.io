@@ -19,7 +19,7 @@
 <div class="zoom-icon zoom-icon-in"></div>
 
 <div class="magazine-viewport">
-		<div style="padding-left: 40%;padding-top: 5%;width=50%;">
+		<div id="audioDiv" style="padding-left: 40%;padding-top: 5%;width=50%;">
 			<audio width="100%" controls>
 				  <source src="audio/1.mp3" type="audio/mpeg">
 				Your browser does not support the audio element.
@@ -503,6 +503,26 @@ yepnope({
         // This means we were unsuccessful - this browser doesn't support the autoplay attribute.
     }
 })(); // Invoke anonymous function.
+</script>
+<script>
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+if(!detectmob){
+$('#audioDiv').addClass('hidden');
+}
 </script>
 </body>
 </html>
